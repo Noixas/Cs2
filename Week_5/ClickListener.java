@@ -20,6 +20,7 @@ to = b;
    if(from.getCurrencyOption() == to.getCurrencyOption()){
      to.setTextArea("Error, same currency");
    }
+   else{
     try {
       //0 USD
       //1 Euros
@@ -68,6 +69,7 @@ to = b;
       from.setTextArea("");
       to.setTextArea("Write numbers only");
     }
+  }
  }
  private void setOutput(float out)
  {

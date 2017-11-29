@@ -1,0 +1,3 @@
+john = computer
+jorge = Maastricht
+tetromino84 = tetRis5
