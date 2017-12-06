@@ -18,6 +18,7 @@ public class Login extends JPanel{
   public Login(JFrame pFrame)
   {
     frame = pFrame;
+
     setLayout(new GridLayout(5, 2));
 
     add(new Panel());
@@ -94,12 +95,27 @@ public class Login extends JPanel{
   }
   private void showWelcome()
   {
-    removeAll();
+    frame.setVisible(false);
+    JFrame sframe = new JFrame();
+    sframe.setVisible(true);
+    sframe.setMinimumSize(new Dimension(300,200));
+    sframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     JPanel paneWelcome = new JPanel();
     JLabel welc = new JLabel("Welcome back");
     paneWelcome.add(welc);
-    add(paneWelcome);
-    revalidate();
+    sframe.add(paneWelcome);
+  }
+  private void WrongPassword()
+  {
+    frame.setVisible(false);
+    JFrame sframe = new JFrame();
+    sframe.setVisible(true);
+    sframe.setMinimumSize(new Dimension(300,200));
+    sframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    JPanel paneWelcome = new JPanel();
+    JLabel wrong = new JLabel("3 attemps!! \n Try tomorrow");
+    paneWelcome.add(wrong);
+    sframe.add(paneWelcome);
   }
   private void checkPassword(String user)
   {
@@ -111,9 +127,7 @@ public class Login extends JPanel{
         System.out.println("Password doesnt match");
       attempts++;
       if(attempts >= 3){
-        for(int i = 0 ; i< 60; i++)
-        System.out.println("3 Attempts... calling security");
-        System.exit(0);
+        WrongPassword();
       }
     }
   }
