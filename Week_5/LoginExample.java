@@ -16,7 +16,7 @@ public class LoginExample{
     JPanel pane = new JPanel();
   //  pane.setLayout(new GridLayout(2, 5));
     frame.add(pane);
-    Login log = new Login();
+    Login log = new Login(frame);
     pane.add(log);
     frame.setMinimumSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
